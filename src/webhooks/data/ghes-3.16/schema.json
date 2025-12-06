@@ -12605,6 +12605,15 @@
                     },
                     {
                       "type": "string",
+                      "name": "artifact_metadata",
+                      "description": "",
+                      "enum": [
+                        "read",
+                        "write"
+                      ]
+                    },
+                    {
+                      "type": "string",
                       "name": "attestations",
                       "description": "",
                       "enum": [
@@ -12636,6 +12645,14 @@
                       "description": "",
                       "enum": [
                         "read",
+                        "write"
+                      ]
+                    },
+                    {
+                      "type": "string",
+                      "name": "copilot_requests",
+                      "description": "",
+                      "enum": [
                         "write"
                       ]
                     },
@@ -13538,6 +13555,15 @@
                     },
                     {
                       "type": "string",
+                      "name": "artifact_metadata",
+                      "description": "",
+                      "enum": [
+                        "read",
+                        "write"
+                      ]
+                    },
+                    {
+                      "type": "string",
                       "name": "attestations",
                       "description": "",
                       "enum": [
@@ -13569,6 +13595,14 @@
                       "description": "",
                       "enum": [
                         "read",
+                        "write"
+                      ]
+                    },
+                    {
+                      "type": "string",
+                      "name": "copilot_requests",
+                      "description": "",
+                      "enum": [
                         "write"
                       ]
                     },
@@ -16580,7 +16614,7 @@
           "childParamsGroups": []
         },
         {
-          "type": "object or null",
+          "type": "object",
           "name": "alert",
           "in": "body",
           "description": "<p>The code scanning alert involved in the event.</p>",
@@ -16760,6 +16794,11 @@
               "name": "html_url",
               "description": "<p>The GitHub URL of the alert resource.</p>",
               "isRequired": true
+            },
+            {
+              "type": "string",
+              "name": "instances_url",
+              "description": ""
             },
             {
               "type": "object or null",
@@ -16958,10 +16997,20 @@
               ]
             },
             {
+              "type": "string or null",
+              "name": "updated_at",
+              "description": ""
+            },
+            {
               "type": "string",
               "name": "url",
               "description": "",
               "isRequired": true
+            },
+            {
+              "type": "null",
+              "name": "dismissal_approved_by",
+              "description": ""
             }
           ]
         },
@@ -204251,7 +204300,7 @@
                         {
                           "type": "boolean",
                           "name": "automatic_copilot_code_review_enabled",
-                          "description": "<p>Request Copilot code review for new pull requests automatically if the author has access to Copilot code review.</p>"
+                          "description": "<p>Request Copilot code review for new pull requests automatically if the author has access to Copilot code review and their premium requests quota has not reached the limit.</p>"
                         },
                         {
                           "type": "boolean",
@@ -204803,7 +204852,7 @@
                 {
                   "type": "object",
                   "name": "copilot_code_review",
-                  "description": "<p>Request Copilot code review for new pull requests automatically if the author has access to Copilot code review.</p>",
+                  "description": "<p>Request Copilot code review for new pull requests automatically if the author has access to Copilot code review and their premium requests quota has not reached the limit.</p>",
                   "isRequired": [
                     "type"
                   ],
@@ -205300,7 +205349,7 @@
                         {
                           "type": "boolean",
                           "name": "automatic_copilot_code_review_enabled",
-                          "description": "<p>Request Copilot code review for new pull requests automatically if the author has access to Copilot code review.</p>"
+                          "description": "<p>Request Copilot code review for new pull requests automatically if the author has access to Copilot code review and their premium requests quota has not reached the limit.</p>"
                         },
                         {
                           "type": "boolean",
@@ -205852,7 +205901,7 @@
                 {
                   "type": "object",
                   "name": "copilot_code_review",
-                  "description": "<p>Request Copilot code review for new pull requests automatically if the author has access to Copilot code review.</p>",
+                  "description": "<p>Request Copilot code review for new pull requests automatically if the author has access to Copilot code review and their premium requests quota has not reached the limit.</p>",
                   "isRequired": [
                     "type"
                   ],
@@ -206349,7 +206398,7 @@
                         {
                           "type": "boolean",
                           "name": "automatic_copilot_code_review_enabled",
-                          "description": "<p>Request Copilot code review for new pull requests automatically if the author has access to Copilot code review.</p>"
+                          "description": "<p>Request Copilot code review for new pull requests automatically if the author has access to Copilot code review and their premium requests quota has not reached the limit.</p>"
                         },
                         {
                           "type": "boolean",
@@ -206901,7 +206950,7 @@
                 {
                   "type": "object",
                   "name": "copilot_code_review",
-                  "description": "<p>Request Copilot code review for new pull requests automatically if the author has access to Copilot code review.</p>",
+                  "description": "<p>Request Copilot code review for new pull requests automatically if the author has access to Copilot code review and their premium requests quota has not reached the limit.</p>",
                   "isRequired": [
                     "type"
                   ],
@@ -207372,7 +207421,7 @@
                             {
                               "type": "boolean",
                               "name": "automatic_copilot_code_review_enabled",
-                              "description": "<p>Request Copilot code review for new pull requests automatically if the author has access to Copilot code review.</p>"
+                              "description": "<p>Request Copilot code review for new pull requests automatically if the author has access to Copilot code review and their premium requests quota has not reached the limit.</p>"
                             },
                             {
                               "type": "boolean",
@@ -207924,7 +207973,7 @@
                     {
                       "type": "object",
                       "name": "copilot_code_review",
-                      "description": "<p>Request Copilot code review for new pull requests automatically if the author has access to Copilot code review.</p>",
+                      "description": "<p>Request Copilot code review for new pull requests automatically if the author has access to Copilot code review and their premium requests quota has not reached the limit.</p>",
                       "isRequired": [
                         "type"
                       ],
@@ -208207,7 +208256,7 @@
                             {
                               "type": "boolean",
                               "name": "automatic_copilot_code_review_enabled",
-                              "description": "<p>Request Copilot code review for new pull requests automatically if the author has access to Copilot code review.</p>"
+                              "description": "<p>Request Copilot code review for new pull requests automatically if the author has access to Copilot code review and their premium requests quota has not reached the limit.</p>"
                             },
                             {
                               "type": "boolean",
@@ -208759,7 +208808,7 @@
                     {
                       "type": "object",
                       "name": "copilot_code_review",
-                      "description": "<p>Request Copilot code review for new pull requests automatically if the author has access to Copilot code review.</p>",
+                      "description": "<p>Request Copilot code review for new pull requests automatically if the author has access to Copilot code review and their premium requests quota has not reached the limit.</p>",
                       "isRequired": [
                         "type"
                       ],
@@ -209047,7 +209096,7 @@
                                 {
                                   "type": "boolean",
                                   "name": "automatic_copilot_code_review_enabled",
-                                  "description": "<p>Request Copilot code review for new pull requests automatically if the author has access to Copilot code review.</p>"
+                                  "description": "<p>Request Copilot code review for new pull requests automatically if the author has access to Copilot code review and their premium requests quota has not reached the limit.</p>"
                                 },
                                 {
                                   "type": "boolean",
@@ -209599,7 +209648,7 @@
                         {
                           "type": "object",
                           "name": "copilot_code_review",
-                          "description": "<p>Request Copilot code review for new pull requests automatically if the author has access to Copilot code review.</p>",
+                          "description": "<p>Request Copilot code review for new pull requests automatically if the author has access to Copilot code review and their premium requests quota has not reached the limit.</p>",
                           "isRequired": [
                             "type"
                           ],
